@@ -99,6 +99,8 @@
 (setq ess-ask-for-ess-directory nil)
 (setq ess-eval-visibly-p nil)
 (require 'ess-eldoc)
+;; ESS converts underscores to "<-" by default
+(ess-toggle-underscore nil)
 
 ;;; multiple window on startup
 ;;; top-left: reserved for R script editing
