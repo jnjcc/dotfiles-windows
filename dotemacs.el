@@ -7,6 +7,7 @@
 (defvar *r-start-args* "--quiet --no-restore-history --no-save ")
 (defvar *r-bin* "/path/to/Rterm")
 
+;;; getwd() / setwd()
 (setq default-directory "/path/to/R/workspace/")
 
 ;;;; 2) Emacs default setup
@@ -114,6 +115,7 @@
 ;; reload last open buffers
 (desktop-save-mode 1)
 
+;;; M-x clipboard-yank
 (dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1]
              [triple-mouse-1]
              [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2]
