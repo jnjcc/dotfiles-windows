@@ -108,6 +108,7 @@ autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 sts=4
 autocmd FileType python setlocal foldmethod=indent foldlevel=99
 
 "" execute python from within vim
+"" `<M-x eshell> python` under Emacs
 autocmd FileType python noremap <leader>z :!python %<CR>
 
 """"""""""""""""""" other plugins
