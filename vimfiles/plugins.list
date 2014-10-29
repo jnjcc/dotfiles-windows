@@ -29,3 +29,10 @@
 * pyflakes 3.01 (http://www.vim.org/scripts/script.php?script_id=2441)
     ftplugin/python/pyflakes.vim
     ftplugin/python/pyflakes/
+
+* vim-conque 2.2 (http://www.vim.org/scripts/script.php?script_id=2771)
+    autoload/conque_term.vim
+    autoload/conque_term/
+    doc/conque_term.txt
+    plugin/conque_term.vim
+    syntax/conque_term.vim
