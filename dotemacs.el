@@ -107,7 +107,8 @@
 ;;; top-left: reserved for R script editing
 ;;; bottom-left: R console
 ;;; right: reserved for R help
-(split-window-horizontally)
+;; turns out we don't need the help window that much...
+; (split-window-horizontally)
 (split-window-vertically)
 (other-window 1)
 (R)
