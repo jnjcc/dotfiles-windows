@@ -148,5 +148,10 @@ fun! TrimTrailingWhitespace()
 endfun
 fun! SpawnPython()
     vsp
-    ConqueTerm python
+    "" Finally, iPython under windows...
+    "" Windows Binaries for Python Extension Packages:
+    ""   http://www.lfd.uci.edu/~gohlke/pythonlibs/
+    ""     setuptools, pyreadline, and ipython
+    "" /path/to/python/Scripts/ipython.exe
+    ConqueTerm ipython
 endfun
