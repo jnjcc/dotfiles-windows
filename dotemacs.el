@@ -50,7 +50,8 @@
 ; (set-face-attribute 'default nil :height 120)
 (set-background-color "dark slate gray")
 ; (set-background-color "black")
-(set-foreground-color "wheat")
+(set-foreground-color "grey")
+; (set-foreground-color "wheat")
 (set-cursor-color "white")
 (set-face-background 'region "blue")
 
