@@ -112,6 +112,10 @@ map <leader>z :call SpawnPython()<CR>
 "" `<M-x eshell> python` under Emacs
 autocmd FileType python noremap <leader>q :!python %<CR>
 
+"""""" HTML
+autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=8 sts=2
+autocmd FileType html map <leader>q :!"/path/to/chrome" %:p<CR>
+
 """"""""""""""""""" other plugins
 """""" Tagbar
 nmap t :TagbarToggle<CR>
