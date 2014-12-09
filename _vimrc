@@ -37,7 +37,11 @@ set incsearch
 set hlsearch
 
 """""" Editing
-colorscheme torte
+" colorscheme torte
+colorscheme solarized
+let g:solarized_bold = 0
+let g:solarized_italic = 0
+
 """ FIXME: this won't work for me, use "ShowTrailingWhitespace" plugin instead
 " autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
 " match TrailingWhitespace /\s\+$/
