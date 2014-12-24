@@ -90,7 +90,8 @@ set guioptions-=L " left-hand scroll bar
 
 if has("gui_running")
     " GUI is running or is about to start
-    set lines=999 columns=999
+    " set lines=999 columns=999
+    au GUIEnter * simalt ~x
 else
     " This is console vim
     if exists("+lines")
