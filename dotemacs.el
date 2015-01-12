@@ -91,6 +91,9 @@
 (add-hook 'inferior-ess-mode-hook
           (lambda ()
             (setq show-trailing-whitespace nil)))
+(add-hook 'ess-help-mode-hook
+          (lambda ()
+            (setq show-trailing-whitespace nil)))
 (setq load-path (append (list *ess-path*) load-path))
 (setq-default inferior-R-args *r-start-args*)
 (setq inferior-R-program-name *r-bin*)
