@@ -113,6 +113,7 @@ autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 sts=4
 autocmd FileType python setlocal foldmethod=indent foldlevel=99
 
 "" execute python from within vim
+"" NOTICE: :bd to kill the python process
 map <leader>z :call SpawnPython()<CR>
 "" `<M-x eshell> python` under Emacs
 autocmd FileType python noremap <leader>q :!python %<CR>
@@ -156,7 +157,9 @@ fun! TrimTrailingWhitespace()
     call cursor(l, c)
 endfun
 fun! SpawnPython()
-    vsp
+    " vsp
+    "" gt / gT for next / prev tab
+    tabnew
     "" Finally, iPython under windows...
     "" Windows Binaries for Python Extension Packages:
     ""   http://www.lfd.uci.edu/~gohlke/pythonlibs/
