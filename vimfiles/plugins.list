@@ -36,3 +36,6 @@
     doc/conque_term.txt
     plugin/conque_term.vim
     syntax/conque_term.vim
+* indentLine 1.0.6 (http://www.vim.org/scripts/script.php?script_id=4354)
+    after/plugin/indentLine.vim
+    doc/indentLine.txt

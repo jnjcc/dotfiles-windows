@@ -110,6 +110,7 @@ let g:mapleader=";"
 """""" Python
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 sts=4
 "" `vim-indent-guides` does not work on vim 7.2, try `n<<` or `n>>`
+"" `indentLine` only works in Vim 7.3+
 autocmd FileType python setlocal foldmethod=indent foldlevel=99
 
 "" execute python from within vim
@@ -156,6 +157,7 @@ fun! TrimTrailingWhitespace()
     %s/\s\+$//g
     call cursor(l, c)
 endfun
+""" For ipython, numpy, matplotlib, etc, you need setuptools & `easy_install`
 fun! SpawnPython()
     " vsp
     "" gt / gT for next / prev tab
