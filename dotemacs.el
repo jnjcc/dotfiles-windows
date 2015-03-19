@@ -106,6 +106,8 @@
 ;; start R in current working directory, don't ask
 (setq ess-ask-for-ess-directory nil)
 (setq ess-eval-visibly-p nil)
+;; make REPL read-only
+(setq comint-prompt-read-only t)
 (require 'ess-eldoc)
 ;; ESS converts underscores to "<-" by default
 (ess-toggle-underscore nil)
