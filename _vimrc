@@ -25,7 +25,8 @@ map + <C-W>+
 set laststatus=2
 set statusline=\ %{HasPaste()}%<%(%f%)%m%r%h\ %w
 set statusline+=\ \ %<%(%{CurDir()}%)
-set statusline+=\ \ \ \ \ \ [%{&ff}/%Y] 
+set statusline+=\ \ \ \ \ \ %y
+set statusline+=[%{&ff}/%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]
 set statusline+=%=%-10.(%l,%c%V%)\ \ \ %p%%/%L
 hi StatusLine ctermfg=gray ctermbg=black
 hi StatusLineNC ctermfg=darkblue ctermbg=gray
