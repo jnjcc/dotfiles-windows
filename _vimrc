@@ -6,13 +6,20 @@ cd /path/to/wd/
 """""" Reading
 set nocompatible
 set backspace=2
+set wrap
+"" gj & gk: treat long lines as break lines
+" map j gj
+" map k gk
+
 "" auto reload vimrc
 " autocmd! bufwritepost .vimrc source ~/.vimrc
 
 """ jump to the last position when reopening a file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
-              \ exe "normal! g'\"" | endif
+  au BufReadPost *
+      \ if line("'\"") > 1 && line("'\"") <= line("$") |
+      \     exe "normal! g'\"" |
+      \ endif
 endif
 
 """ Resize
@@ -36,6 +43,7 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+set magic
 
 """""" Editing
 " colorscheme torte
