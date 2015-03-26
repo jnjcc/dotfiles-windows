@@ -39,6 +39,8 @@ set statusline+=[%{&ff}/%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]
 set statusline+=%=%-10.(%l,%c%V%)\ \ \ %p%%/%L
 hi StatusLine ctermfg=gray ctermbg=black
 hi StatusLineNC ctermfg=darkblue ctermbg=gray
+"" might overwrite statusline
+set wildmenu
 
 """""" Searching
 set ignorecase
