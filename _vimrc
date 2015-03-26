@@ -1,6 +1,8 @@
 """""""""""""""""""" General
 """""" Working Directory
 cd /path/to/wd/
+let mapleader=";"
+let g:mapleader=";"
 " set autochdir
 
 """""" Reading
@@ -60,6 +62,14 @@ set nobackup
 " set backup
 " set backupdir=~/vimfile/backup/
 
+""" Tabs
+let g:lasttab=1
+au TabLeave * let g:lasttab=tabpagenr()
+map <leader>o :tabonly<CR>
+map <leader>m :tabmove<CR>
+map <leader>e :tabedit <C-R>=expand("%:p:h")<CR>
+nmap <leader>l :exe "tabn ". g:lasttab<CR>
+
 "" auto reload when file changed
 " set ar
 
@@ -79,7 +89,7 @@ set showmode
 set autoindent
 set smartindent
 
-""" Tab
+""" Tab key
 " set expandtab
 " set tabstop=4
 " set softtabstop=4
@@ -110,9 +120,6 @@ else
         set columns=100
     endif
 endif
-
-let mapleader=";"
-let g:mapleader=";"
 
 " nnoremap <leader>w :call TrimTrailingWhitespace()<CR>
 
