@@ -59,6 +59,10 @@ let g:solarized_italic = 0
 " autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
 " match TrailingWhitespace /\s\+$/
 
+""" Encoding
+set encoding=cp936
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,gbk,gb2312,big5,euc-jp,latin1
+
 """ Normally, we do not keep backup files
 set nobackup
 " set backup
@@ -67,9 +71,9 @@ set nobackup
 """ Tabs
 let g:lasttab=1
 au TabLeave * let g:lasttab=tabpagenr()
-map <leader>o :tabonly<CR>
+map <leader>1 :tabonly<CR>
 map <leader>m :tabmove<CR>
-map <leader>e :tabedit <C-R>=expand("%:p:h")<CR>
+map <leader>o :tabedit <C-R>=expand("%:p:h")<CR>
 nmap <leader>l :exe "tabn ". g:lasttab<CR>
 
 "" auto reload when file changed
@@ -153,8 +157,10 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "right"  " default to be left
 """ Close vim if the only window left open is the NERDTree
 autocmd bufenter *
-            \ if (winnr("$") == 1 && exists("b:NERDTreeType") &&
-            \ b:NERDTreeType == "primary") | q | endif
+    \ if (winnr("$") == 1 && exists("b:NERDTreeType") &&
+    \   b:NERDTreeType == "primary") |
+    \     q |
+    \ endif
 
 
 """"""""""""""""""" Utility Functions
