@@ -32,6 +32,7 @@
 (setq uniquify-buffer-name-style 'post-forward)
 
 ;;; Editing
+(set-fringe-mode '(0 . 0))
 (setq-default show-trailing-whitespace t)
 ;; M-x delete-trailing-whitespace
 (set-face-background 'trailing-whitespace "red")
