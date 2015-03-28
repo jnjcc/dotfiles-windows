@@ -1,4 +1,4 @@
-;;;;; emacs -nw -q -l ~/.orgmode.el
+;;;;; emacs -q -l ~/.orgmode.el
 
 ;;;; 1) Variables
 (defvar *use-home* (concat (expand-file-name "~") "/"))
@@ -39,8 +39,13 @@
 
 ;;; Emacs setup under windows
 (setq frame-title-format (concat "%b | " default-directory))
-(set-default-font "Monaco-12")
+; (set-default-font "Monaco-12")
 ; (set-face-attribute 'default nil :height 120)
+(set-default-font "Consolas-13")
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+  (set-fontset-font (frame-parameter nil 'font)
+                    charset
+                    (font-spec :family "SimSun" :size 16)))
 (set-background-color "dark slate gray")
 ; (set-background-color "black")
 (set-foreground-color "grey")
