@@ -4,6 +4,9 @@
 (defvar *use-home* (concat (expand-file-name "~") "/"))
 (defvar *plugin-path* (concat *use-home* ".emacs.d/plugins/"))
 
+(defvar *python* "/path/to/python")
+(defvar *ipython-args* "-i /path/to/ipython-script.py")
+
 ;;; getwd() / setwd()
 (defvar *org-path* "/path/to/orgnotes/")
 (setq default-directory *org-path*)
@@ -53,6 +56,7 @@
 ; (set-foreground-color "wheat")
 (set-cursor-color "white")
 (set-face-background 'region "blue")
+(setq w32-get-true-file-attributes nil)
 
 ;; Maximize Emacs
 (if (eq system-type 'windows-nt)
@@ -88,3 +92,20 @@
 (setq org-agenda-files
       (list (concat *org-path* "work.org")
             (concat *org-path* "home.org")))
+
+;;;; 5) Dirty python scripting under windows
+;;; <C-c C-z>: python-shell-switch-to-shell
+;;; <M-x> comment-region
+(setq python-shell-interpreter *python*
+      python-shell-interpreter-args *ipython-args*
+      python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+      python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+      python-shell-completion-setup-code
+      "from IPython.core.completerlib import module_completion"
+      python-shell-completion-module-string-code
+      "';'.join(module_completion('''%s'''))\n"
+      python-shell-completion-string-code
+      "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+(add-hook 'inferior-python-mode-hook
+          (lambda ()
+            (setq show-trailing-whitespace nil)))

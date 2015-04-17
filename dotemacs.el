@@ -55,6 +55,7 @@
 ; (set-foreground-color "wheat")
 (set-cursor-color "white")
 (set-face-background 'region "blue")
+(setq w32-get-true-file-attributes nil)
 
 ;; Maximize Emacs
 (if (eq system-type 'windows-nt)
